@@ -1,0 +1,6 @@
+.idea/
+.venv/
+config/
+uptv.json
+db.sqlite3
+*.pyc
