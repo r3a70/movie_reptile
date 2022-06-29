@@ -1,7 +1,7 @@
 from celery import Celery
 
 app = Celery('autoCelery',
-             broker='redis://localhost:6379/0'
+             broker='redis://redis_celery:6379/0'
              )
 
 app.conf.timezone = "Asia/Tehran"
