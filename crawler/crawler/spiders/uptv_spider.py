@@ -1,5 +1,6 @@
 import scrapy
-import re
+from scrapy.crawler import CrawlerProcess
+from autoCelery.celery import app
 
 
 class UptvSpider(scrapy.Spider):
@@ -87,20 +88,46 @@ class UptvSpider(scrapy.Spider):
 
         post_download_links = response.css("a.btn-sm::attr(href)").getall()
 
-        yield {
-            "name": post_name,
-            "post_url": response.url,
-            "image": post_image,
-            "tags": post_tags,
-            "age": post_age,
-            "country": post_country,
-            "imdb": post_imdb,
-            "rating": post_ratings,
-            "site_rate": post_uptv_loves,
-            "likes": post_likes,
-            "dislike": post_dislike,
-            "actors": post_video_actors,
-            "director": post_video_director,
-            "story": post_video_story,
-            "links": post_download_links
+        if not post_name:
+            pass
+        else:
+            yield {
+                "name": post_name,
+                "post_url": response.url,
+                "image": post_image,
+                "tags": post_tags,
+                "age": post_age,
+                "country": post_country,
+                "imdb": post_imdb,
+                "rating": post_ratings,
+                "site_rate": post_uptv_loves,
+                "likes": post_likes,
+                "dislike": post_dislike,
+                "actors": post_video_actors,
+                "director": post_video_director,
+                "story": post_video_story,
+                "links": post_download_links
+            }
+
+
+def run_upt():
+    process = CrawlerProcess(
+        settings={
+            "FEEDS": {
+                "uptv.json": {"format": "json", "indent": 4},
+            },
+            "FEED_EXPORTERS": {
+                'json': 'crawler.crawler.exporters.Utf8JsonItemExporter',
+            },
         }
+    )
+    process.crawl(UptvSpider)
+    process.start()
+
+
+
+
+
+
+
+

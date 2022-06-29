@@ -1,3 +1,4 @@
 Scrapy
 django
 djangorestframework
+celery[redis]

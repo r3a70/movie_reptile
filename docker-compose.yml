@@ -1,0 +1,5 @@
+services:
+  redis_celery:
+    image: redis
+    ports:
+      - 6379:6379
