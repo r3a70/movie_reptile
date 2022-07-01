@@ -1,6 +1,5 @@
 import scrapy
 from scrapy.crawler import CrawlerProcess
-from autoCelery.celery import app
 
 
 class UptvSpider(scrapy.Spider):
@@ -71,13 +70,11 @@ class UptvSpider(scrapy.Spider):
             response.css("div.row div div div.row div.col-md-auto span::text").getall(), 3, 5
         )
 
-        post_likes = create_post_rating(
-            response.css("div.row div div div.row div.col-md-auto span::text").getall(), 5, 5
-        )
+        post_likes = response.css("span.like-count::text").get().strip() \
+            if response.css("span.like-count::text").get() else 0
 
-        post_dislike = create_post_rating(
-            response.css("div.row div div div.row div.col-md-auto span::text").getall(), 6, 6
-        )
+        post_dislike = response.css("span.dislike-count::text").get().strip() \
+            if response.css("span.dislike-count::text").get() else 0
 
         post_video_actors = response.css("div.col-lg-12 div.mb-half a::text").getall()
 
@@ -123,11 +120,3 @@ def run_upt():
     )
     process.crawl(UptvSpider)
     process.start()
-
-
-
-
-
-
-
-

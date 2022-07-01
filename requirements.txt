@@ -1,4 +1,6 @@
 Scrapy
 django
-djangorestframework
 celery[redis]
+uvicorn
+mysqlclient
+sqlalchemy

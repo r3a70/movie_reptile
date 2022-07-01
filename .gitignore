@@ -6,3 +6,5 @@ hex_dl.json
 celerybeat-schedule
 db.sqlite3
 *.pyc
+database/
+celerybeat-schedule
