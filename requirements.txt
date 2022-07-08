@@ -4,3 +4,4 @@ celery[redis]
 uvicorn
 mysqlclient
 sqlalchemy
+djangorestframework

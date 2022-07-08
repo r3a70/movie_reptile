@@ -37,7 +37,8 @@ class HexDlSpider(scrapy.Spider):
 
         post_tags = response.css("p.film-genre a::text").getall()
 
-        post_age = response.css("ul li.pg::text").get().strip() if response.css("ul li.pg::text").get() else None
+        post_age = response.css("ul li.pg::text").get().replace("رده سنی :", "").strip()\
+            if response.css("ul li.pg::text").get() else None
 
         post_country = response.css("p.film-country::text").getall()
 
@@ -49,7 +50,8 @@ class HexDlSpider(scrapy.Spider):
 
         post_actors = response.css("p.film-actor::text").getall()
 
-        post_director = response.css("p.film-director::text").get()
+        post_director = response.css("p.film-director::text").get().replace("کارگردان :", "").strip() if \
+            response.css("p.film-director::text").get() is not None else "نامعلوم"
 
         post_story = response.css("p.film-story::text").get().strip().replace("\u200c", " ") if \
             response.css("p.film-story::text").get() else None
