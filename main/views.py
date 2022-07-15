@@ -23,6 +23,7 @@ def main(request: Request):
 
         next_page = False
         main_query = False
+        base_url = "http://" + request.META['HTTP_HOST'] + '/api/v1/'
 
         if request.query_params.get('name'):
             movies = Movies.objects.filter(name__icontains=request.query_params.get('name')).all()
@@ -46,10 +47,10 @@ def main(request: Request):
 
         if next_page:
             if not main_query:
-                nex_page = f"http://127.0.0.1:8000/api/v1/?page={int(request.query_params.get('page'))+1}"
-                previous_page = f"http://127.0.0.1:8000/api/v1/?page={int(request.query_params.get('page'))-1}"
+                nex_page = f"{base_url}?page={int(request.query_params.get('page'))+1}"
+                previous_page = f"{base_url}?page={int(request.query_params.get('page'))-1}"
             else:
-                nex_page = f"http://127.0.0.1:8000/api/v1/?page={2}"
+                nex_page = f"{base_url}?page={2}"
                 return Response(
                     {
                         "next": nex_page,

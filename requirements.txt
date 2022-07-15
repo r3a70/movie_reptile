@@ -1,7 +1,7 @@
 Scrapy
 django
 celery[redis]
-uvicorn
+uvicorn[standard]
 mysqlclient
 sqlalchemy
 djangorestframework

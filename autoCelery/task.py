@@ -29,11 +29,11 @@ def setup_periodic_tasks(sender, **kwargs):
     #     hex_dl.s(),
     # )
     sender.add_periodic_task(
-        crontab(hour=11, minute=20),
+        crontab(hour=14, minute=15),
         check_uptv.s(),
     )
     sender.add_periodic_task(
-        crontab(hour=11, minute=50),
+        crontab(hour=14, minute=50),
         check_hex_dl.s(),
     )
 
