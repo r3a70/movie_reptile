@@ -1,5 +1,7 @@
 # Movie Crawler
 
+![View of Project](data/Screenshot%20from%202022-07-15%2012-39-21.png)
+![Database](data/db.png)
 - First install docker & docker compose.
   * [https://www.docker.com/get-started/]()
 - Then run the following commands.
@@ -26,5 +28,5 @@
       ```
   * good job, it's done. also you can change the celery settings in autoCelery folder.
 
-
-## It's not a real version, it's a beta version of movie-reptile. it has a lot of bugs to be fixed :)
+### You can delete, add and Update movie, tag, country and ...
+* import postman collection into your postman and check the api

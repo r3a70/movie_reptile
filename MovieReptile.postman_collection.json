@@ -1,0 +1,785 @@
+{
+	"info": {
+		"_postman_id": "e1f4c2b3-525e-4262-8f0b-46d2c23c6f74",
+		"name": "MovieReptile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19585180"
+	},
+	"item": [
+		{
+			"name": "Get movie",
+			"item": [
+				{
+					"name": "Get Movies",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_usrl}}/?director=nolan",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "format",
+									"value": "json",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "یاغی",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "22",
+									"disabled": true
+								},
+								{
+									"key": "like",
+									"value": "100",
+									"disabled": true
+								},
+								{
+									"key": "actor",
+									"value": "denzel",
+									"disabled": true
+								},
+								{
+									"key": "director",
+									"value": "nolan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get specify Movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_usrl}}/188/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"188",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Genre",
+			"item": [
+				{
+					"name": "Add Genre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 0,\n    \"tag\": \"غمگین\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/tag/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"tag",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Genre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 1,\n    \"tag\": \"غمگین\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/tag/?id=2",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"tag",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Genre",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_usrl}}/tag/delete/4/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"tag",
+								"delete",
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "tg_id",
+									"value": "2",
+									"description": "for a specify tag",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Country",
+			"item": [
+				{
+					"name": "Add Country",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 0,\n    \"country\": \"\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/country/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"country",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Country",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 1,\n    \"country\": \"ایران زمان قاجاری\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/country/?id=1",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"country",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Country",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_usrl}}/country/delete/4/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"country",
+								"delete",
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "ct_id",
+									"value": "6",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actor",
+			"item": [
+				{
+					"name": "Add Actors",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 0,\n    \"actor\": \"\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/actor/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"actor",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Actors",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 1,\n    \"actor\": \"شوبول ممد\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/actor/?id=3",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"actor",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete actor",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_usrl}}/actor/delete/4/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"actor",
+								"delete",
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "ac_id",
+									"value": "46",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Link",
+			"item": [
+				{
+					"name": "Add Links",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 0,\n    \"link\": \"\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/add/link/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"add",
+								"link",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Links",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\n    \"movie_id\": 1,\n    \"link\": \"شوبول کجاییییییییییییییییی\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/link/?id=1",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"link",
+								""
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete link",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_usrl}}/link/delete/4/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"link",
+								"delete",
+								"4",
+								""
+							],
+							"query": [
+								{
+									"key": "li_id",
+									"value": "472",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Create movie",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"post_url\": \"\",\n    \"post_image\": \"\",\n    \"age\": \"\",\n    \"imdb\": \"\",\n    \"rating\": \"\",\n    \"site_rate\": \"0\",\n    \"like\": 0,\n    \"dislike\": 0,\n    \"director\": \"\",\n    \"story\": 0,\n    \"tags\": 0,\n    \"country\": 0,\n    \"actors\": 0,\n    \"links\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/movie/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"movie",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update movie",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"name\": \"sdsadas\",\n    \"post_url\": \"sdasad\",\n    \"post_image\": \"sadsad\",\n    \"age\": \"ssadadsads\",\n    \"imdb\": \"sadsadasd\",\n    \"rating\": \"sadsdasad\",\n    \"site_rate\": \"0\",\n    \"like\": 0,\n    \"dislike\": 0,\n    \"director\": \"sadsdasd\",\n    \"story\": \"000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/movie/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"movie",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete movie",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "ram3a1370",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "root",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"\",\n    \"post_url\": \"\",\n    \"post_image\": \"\",\n    \"age\": \"\",\n    \"imdb\": \"\",\n    \"rating\": \"\",\n    \"site_rate\": \"0\",\n    \"like\": 0,\n    \"dislike\": 0,\n    \"director\": \"\",\n    \"story\": 0,\n    \"tags\": 0,\n    \"country\": 0,\n    \"actors\": 0,\n    \"links\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_usrl}}/movie/delete/1/",
+							"host": [
+								"{{base_usrl}}"
+							],
+							"path": [
+								"movie",
+								"delete",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

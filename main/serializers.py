@@ -5,29 +5,28 @@ from .models import Movies, Tags, Country, Actors, Links
 class MovieSerializer(serializers.ModelSerializer):
     class Meta:
         model = Movies
-        fields = ['id', 'name', 'post_url', 'post_image', 'age', 'imdb', 'rating', 'site_rate', 'like', 'dislike',
-                  'director']
+        fields = ("__all__")
 
 
 class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tags
-        fields = ['movie_id', 'tag']
+        fields = ("__all__")
 
 
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
-        fields = ['movie_id', 'country']
+        fields = ("__all__")
 
 
 class ActorsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Actors
-        fields = ['movie_id', 'actor']
+        fields = ("__all__")
 
 
 class LinksSerializer(serializers.ModelSerializer):
     class Meta:
         model = Links
-        fields = ['movie_id', 'link']
+        fields = ("__all__")
